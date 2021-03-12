@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "534625724193",
+    "project_id": "naturecollection-9573f",
+    "storage_bucket": "naturecollection-9573f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534625724193:android:7a04788a5c633b32c90060",
+        "android_client_info": {
+          "package_name": "de.laurette.naturecollection"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "534625724193-qbgtie4o6q09577vs83v0m7sph52937u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCF-1ryClXlcj79AjNOdhgeZ6q7MMXTPaY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "534625724193-qbgtie4o6q09577vs83v0m7sph52937u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,61 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        glide = '4.12.0'
+    }
+    ext.kotlin_version = '1.4.31'
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.1.2"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.3.5'
+        //annotationProcessor "com.github.bumptech.glide:compiler:${rootProject.ext.glideVersion}"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        // ceest ce que je viens dajouter
+        mavenCentral()
+        google()
+        configurations.all {
+            resolutionStrategy.eachDependency { details ->
+                def requested = details.requested
+                if (requested.group == 'com.google.android.gms') {
+                    details.useVersion '12.0.1'
+                }
+                if (requested.group == 'com.google.firebase') {
+                    details.useVersion '12.0.1'
+                }
+            }
+        }
+        //end
+        jcenter()
+        maven {
+            url "https://maven.google.com"
+        }
+    }
+
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xmaxerrs" << "1000"
+        }
+    }
+}
+        //google()
+        //mavenLocal()
+        //jcenter()
+        //maven {
+            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+            //url "$rootDir/../node_modules/react-native/android"
+        //}
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
